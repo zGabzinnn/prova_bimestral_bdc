@@ -1,0 +1,59 @@
+                         Prova Bimestral Banco de dados
+Nome: Bruno Lima, Gabriel André e Carlos Augusto      Professor:Jorge
+1.
+CREATE TABLE movies (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    path VARCHAR(255),
+    title VARCHAR(255),
+    duration_min TIME,
+    launch_date DATE,69
+    main_artists VARCHAR(255),
+    movie_director VARCHAR(225),
+    poster VARCHAR(255),
+    movie_genre VARCHAR(100)
+);
+
+2.CREATE TABLE artists (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    birth_date DATE,
+    death_date DATE,
+    type VARCHAR(100),
+    biography TEXT,
+    most_known_movie VARCHAR(255)
+);
+
+3.CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) UNIQUE,
+    password VARCHAR(255),
+    complete_name VARCHAR(255),
+    age INT,
+    favorites_genres VARCHAR(255),
+    perfil_creation_date DATETIME,
+    last_acess DATETIME,
+    telephone VARCHAR(20),
+    plan VARCHAR(50)
+);
+
+4.
+
+ALTER TABLE movie
+ADD COLUMN artists_id INT,
+ADD FOREIGN KEY (artists_id) REFERENCES artists(id);
+
+
+ALTER TABLE movie
+ADD COLUMN user_id INT,
+ADD FOREIGN KEY (users_id) REFERENCES users(id);
+5.
+
+
+INSERT INTO artists (name, birth_date, death_date, type, biography, most_known_movies)
+VALUES
+    ('artists 1', '1990-01-01', NULL, 'artists', ' artists biography 1', 'most_known_movies 1'),
+    ('artists 2', '1985-05-10', NULL, 'artists', 'artists biography 2', 'most_known_movies 2');
+
+
+
+
